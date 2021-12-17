@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index.html</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/13ff97c63a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card-body full-app">
+          <div class="row">
+            <div class="col">
+              <h1 class="city-searched" id="city-heading">Granada</h1>
+            </div>
+            <div class="row">
+              <div class="col">
+                <h2 class="today-weather">Today</h2>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <h2 class="today-temp" id="todays-temp">
+                    19°c
+                  </h2>
+                  <button
+                    type="button"
+                    id="temp-units"
+                    class="btn btn-outline-dark unit"
+                  >
+                    °F
+                  </button>
+                </div>
+                <div class="col-6">
+                  <i class="fas fa-sun today-weather-icon"></i>
+                </div>
+              </div>
+            </div>
+            <div class="container weather-search">
+              <div class="row">
+                <div class="col-6">
+                  <form id="city-search-form">
+                    <input
+                      type="text"
+                      placeholder="Enter a city"
+                      autocomplete="off"
+                      autofocus="on"
+                      id="search-text-input"
+                    />
+                    <input
+                      type="submit"
+                      value="Search"
+                      id="search-city-button"
+                    />
+                    <input
+                      type="button"
+                      value="Current"
+                      id="current-location-button"
+                    />
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="container next-days-weather">
+              <div class="card mb-3" style="max-width: 90%;">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h4 class="tomorrow-weather">Mon</h4>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h4 class="tomorrow-temp">22°c</h4>
+                      <i class="fas fa-sun next-day-weather-icon"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-3" style="max-width: 90%;">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h4 class="day-three-weather">Tue</h4>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h4 class="day-three-temp">20°c</h4>
+                      <i class="fas fa-sun day-three-weather-icon"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-3" style="max-width: 90%;">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h4 class="day-four-weather">Wed</h4>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h4 class="day-four-temp">17°c</h4>
+                      <i class="fas fa-cloud day-four-weather-icon"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-3" style="max-width: 90%;">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h4 class="day-five-weather">Thu</h4>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h4 class="day-five-temp">18°c</h4>
+                      <i class="fas fa-cloud day-five-weather-icon"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-3" style="max-width: 90%;">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h4 class="day-six-weather">Fri</h4>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h4 class="day-six-temp">21°c</h4>
+                      <i class="fas fa-sun day-six-weather-icon"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <footer class="coder-info">Coded by Kim Elisa</footer>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
