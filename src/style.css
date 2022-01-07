@@ -10,7 +10,8 @@ body {
 
 h1 {
   color: teal;
-  font-size: 64px;
+  font-size: 56px;
+  padding-top: 10px;
   line-height: 20px;
 }
 
@@ -34,13 +35,22 @@ footer {
 }
 
 .today-weather {
-  font-size: 32px;
+  font-size: 28px;
   padding-top: 15px;
+  padding-bottom: 0;
+  line-height: 30px;
+}
+
+.today-weather-description {
+  font-size: 22px;
+  padding-top: 0;
+  line-height: 20px;
 }
 
 .overview-weather {
-  text-align: top right;
-  padding: 20px 20px;
+  text-align: right;
+  padding: 30px 60px 10px 0;
+  margin: 0 auto;
 }
 
 .today-weather-icon {
@@ -59,4 +69,17 @@ footer {
 .day-five-weather-icon {
   color: lightgray;
   font-size: 48px;
+}
+
+.container .weather-search {
+  padding-bottom: 20px;
+  margin: -20 auto;
+}
+
+.button-search {
+  display: inline-block;
+}
+
+.button-current {
+  display: inline-block;
 }
