@@ -38,6 +38,11 @@ footer {
   padding-top: 15px;
 }
 
+.overview-weather {
+  text-align: top right;
+  padding: 20px 20px;
+}
+
 .today-weather-icon {
   color: darkgoldenrod;
   font-size: 76px;
