@@ -30,6 +30,10 @@ footer {
   margin: auto;
 }
 
+.overview {
+  padding-bottom: 20px;
+}
+
 .today-weather-icon {
   color: darkgoldenrod;
   font-size: 76px;

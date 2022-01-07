@@ -87,7 +87,7 @@ function formatDate(date) {
   ];
 
   let currentDay = days[now.getDay()];
-  let currentDate = now.getDate();
+  let currentDate = date.getDate();
   let currentMonth = months[now.getMonth()];
   let currentHour = now.getHours();
   let currentMin = now.getMinutes();
@@ -102,6 +102,7 @@ function formatDate(date) {
 
   let formattedDateTime = `${currentDay} ${currentDate} ${currentMonth} ${currentHour}:${currentMin}`;
   headingDayTime.innerHTML = `${formattedDateTime}`;
+
   return formattedDateTime;
 }
 
