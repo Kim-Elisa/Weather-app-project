@@ -11,8 +11,6 @@ body {
 h1 {
   color: teal;
   font-size: 64px;
-  text-align: left;
-  padding: 20px 20px;
   line-height: 20px;
 }
 
@@ -31,7 +29,13 @@ footer {
 }
 
 .overview {
-  padding-bottom: 20px;
+  padding: 20px 20px;
+  text-align: left;
+}
+
+.today-weather {
+  font-size: 32px;
+  padding-top: 15px;
 }
 
 .today-weather-icon {
