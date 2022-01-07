@@ -65,33 +65,45 @@ currentLocationButton.addEventListener("click", searchCurrentPosition);
 
 // get current date and time
 
-let now = new Date();
-let headingDayTime = document.querySelector(".today-weather");
+function formatDate(date) {
+  let now = new Date();
+  let headingDayTime = document.querySelector(".today-weather");
 
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday"
-];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-let currentDay = days[now.getDay()];
-let currentHour = now.getHours();
-let currentMin = now.getMinutes();
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
 
-if (currentHour < 10) {
-  currentHour = `0${currentHour}`;
+  let currentDay = days[now.getDay()];
+  let currentDate = now.getDate();
+  let currentMonth = months[now.getMonth()];
+  let currentHour = now.getHours();
+  let currentMin = now.getMinutes();
+
+  if (currentHour < 10) {
+    currentHour = `0${currentHour}`;
+  }
+
+  if (currentMin < 10) {
+    currentMin = `0${currentMin}`;
+  }
+
+  let formattedDateTime = `${currentDay} ${currentDate} ${currentMonth} ${currentHour}:${currentMin}`;
+  headingDayTime.innerHTML = `${formattedDateTime}`;
+  return formattedDateTime;
 }
-
-if (currentMin < 10) {
-  currentMin = `0${currentMin}`;
-}
-
-let formattedDayTime = `${currentDay} ${currentHour}:${currentMin}`;
-headingDayTime.innerHTML = `${formattedDayTime}`;
 
 // temperature unit change function (from week 4 homework)
 
