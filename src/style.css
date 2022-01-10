@@ -64,6 +64,10 @@ footer {
   top: -30px;
 }
 
+#farenheit {
+  text-decoration: none;
+}
+
 .today-weather-icon {
   color: darkgoldenrod;
   font-size: 76px;
