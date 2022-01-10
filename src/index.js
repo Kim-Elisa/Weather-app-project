@@ -1,12 +1,10 @@
 function showCityWeather(response) {
-  console.log(response.data);
-  console.log(response.data.main.temp);
   let cityName = response.data.name;
   let cityTemp = Math.round(response.data.main.temp);
   let city = document.querySelector("h1");
   let searchInput = document.querySelector("#search-text-input");
   searchInput.value = cityName;
-  let temperature = document.querySelector("#today-temp");
+  let temperature = document.querySelector("#todays-temp");
   let descriptionElement = document.querySelector("#today-weather-description");
 
   let units = "metric";
@@ -38,10 +36,8 @@ let citySearch = document.querySelector("#city-search-form");
 citySearch.addEventListener("submit", showCitySearch);
 
 function showTemp(response) {
-  console.log(response.data);
-  console.log(response.data.main.temp);
   let temp = Math.round(response.data.main.temp);
-  let tempElement = document.querySelector("#today-temp");
+  let tempElement = document.querySelector("#todays-temp");
   tempElement.innerHTML = `${temp}°C`;
 }
 
