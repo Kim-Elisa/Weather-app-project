@@ -6,6 +6,7 @@ function showCityWeather(response) {
   searchInput.value = cityName;
   let temperature = document.querySelector("#todays-temp");
   let descriptionElement = document.querySelector("#today-weather-description");
+  let iconElement = document.querySelector("#today-weather-icon");
 
   let units = "metric";
   let apiKey = "d1be4136ed4955ecd4ad578e1cdcae10";
@@ -14,6 +15,11 @@ function showCityWeather(response) {
   city.innerHTML = `${cityName}`;
   temperature.innerHTML = `${cityTemp}°C`;
   descriptionElement.innerHTML = response.data.weather[0].description;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemp);
 }
