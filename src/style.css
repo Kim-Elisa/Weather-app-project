@@ -66,6 +66,24 @@ footer {
 
 #fahrenheit {
   text-decoration: none;
+  color: black;
+}
+
+#fahrenheit:hover {
+  text-decoration: none;
+  color: black;
+  cursor: default;
+}
+
+#celsius {
+  text-decoration: none;
+  color: black;
+}
+
+#celsius:hover {
+  text-decoration: none;
+  color: black;
+  cursor: default;
 }
 
 .today-weather-icon {
