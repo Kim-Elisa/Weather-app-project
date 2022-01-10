@@ -49,8 +49,19 @@ footer {
 
 .overview-weather {
   text-align: right;
-  padding: 30px 60px 10px 0;
+  padding: 20px 60px 10px 0;
   margin: 0 auto;
+}
+
+.today-temp {
+  font-size: 58px;
+  line-height: 1;
+}
+
+.units {
+  position: relative;
+  font-size: 16px;
+  top: -30px;
 }
 
 .today-weather-icon {
