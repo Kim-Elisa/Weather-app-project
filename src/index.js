@@ -1,7 +1,7 @@
 function showTemperature(response) {
   let temperatureElement = document.querySelector("#todays-temp");
   let cityElement = document.querySelector("#city");
-  let descriptionElement = document.querySelector("#today-weather-description");
+  let descriptionElement = document.querySelector("#weather-description");
   let iconElement = document.querySelector("#today-weather-icon");
 
   celsiusTemperature = response.data.main.temp;
@@ -21,10 +21,10 @@ function showTemperature(response) {
 function search(city) {
   let units = "metric";
   let apiKey = "d1be4136ed4955ecd4ad578e1cdcae10";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}`;
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
 
-  city.innerHTML = `${cityName}`;
+  city.innerHTML = `${city}`;
 }
 
 // handle city search and submit
@@ -61,7 +61,9 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
 
-search("Japan");
+// default city
+
+search("Tokyo");
 
 // current location button and geolocation API
 
@@ -87,7 +89,7 @@ currentLocationButton.addEventListener("click", searchCurrentPosition);
 
 function formatDate(date) {
   let now = new Date();
-  let headingDayTime = document.querySelector("#today-weather");
+  let headingDayTime = document.querySelector("#current-date");
 
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
