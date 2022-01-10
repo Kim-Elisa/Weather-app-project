@@ -14,8 +14,6 @@ function showTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-
-  getForecast(response.data.coord);
 }
 
 // search city
@@ -51,7 +49,7 @@ function retrieveCurrentLocation(position) {
   let apiKey = "d1be4136ed4955ecd4ad578e1cdcae10";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=${units}`;
 
-  axios.get(`${apiUrl}&appid=${apiKey}`).then(showCityWeather);
+  axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
 }
 
 function searchCurrentPosition(event) {
@@ -66,7 +64,7 @@ currentLocationButton.addEventListener("click", searchCurrentPosition);
 
 function formatDate(date) {
   let now = new Date();
-  let headingDayTime = document.querySelector(".today-weather");
+  let headingDayTime = document.querySelector("#today-weather");
 
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
