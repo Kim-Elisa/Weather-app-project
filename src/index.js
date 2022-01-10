@@ -1,4 +1,4 @@
-function showCityWeather(response) {
+function showTemperature(response) {
   let temperatureElement = document.querySelector("#todays-temp");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#today-weather-description");
@@ -24,7 +24,7 @@ function search(city) {
   let units = "metric";
   let apiKey = "d1be4136ed4955ecd4ad578e1cdcae10";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=${units}`;
-  axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemp);
+  axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
 
   city.innerHTML = `${cityName}`;
 }
@@ -38,7 +38,7 @@ function handleCitySearch(event) {
 }
 
 let citySearch = document.querySelector("#city-search-form");
-citySearch.addEventListener("submit", showCitySearch);
+citySearch.addEventListener("submit", handleCitySearch);
 
 search("Japan");
 
