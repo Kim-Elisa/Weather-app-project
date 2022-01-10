@@ -9,10 +9,10 @@ body {
 }
 
 h1 {
-  color: teal;
   font-size: 56px;
   padding-top: 10px;
   line-height: 20px;
+  color: #303841;
 }
 
 h1,
@@ -40,6 +40,7 @@ footer {
 .overview {
   padding: 20px 20px;
   text-align: left;
+  color: #47555e;
 }
 
 #current-date {
