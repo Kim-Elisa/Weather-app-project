@@ -11,7 +11,7 @@ function showCityWeather(response) {
 
   let units = "metric";
   let apiKey = "d1be4136ed4955ecd4ad578e1cdcae10";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?${cityName}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=${units}`;
 
   city.innerHTML = `${cityName}`;
   temperature.innerHTML = `${cityTemp}°C`;
@@ -29,7 +29,7 @@ function showCitySearch(event) {
   h1.innerHTML = `${searchInput.value}`;
   let units = "metric";
   let apiKey = "d1be4136ed4955ecd4ad578e1cdcae10";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?${searchInput}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&units=${units}`;
 
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemp);
 }
