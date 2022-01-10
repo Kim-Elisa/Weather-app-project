@@ -1,19 +1,13 @@
 function showCityWeather(response) {
-  let cityName = response.data.name;
-  let cityTemp = Math.round(response.data.main.temp);
-  let city = document.querySelector("h1");
-  let searchInput = document.querySelector("#search-text-input");
-  searchInput.value = cityName;
-  let temperature = document.querySelector("#todays-temp");
+  let temperatureElement = document.querySelector("#todays-temp");
+  let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#today-weather-description");
   let iconElement = document.querySelector("#today-weather-icon");
 
-  let units = "metric";
-  let apiKey = "d1be4136ed4955ecd4ad578e1cdcae10";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=${units}`;
+  celsiusTemperature = response.data.main.temp;
 
-  city.innerHTML = `${cityName}`;
-  temperature.innerHTML = `${cityTemp}°C`;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   iconElement.setAttribute(
     "src",
@@ -21,8 +15,15 @@ function showCityWeather(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
-  axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemp);
+  getForecast(response.data.coord);
 }
+
+let units = "metric";
+let apiKey = "d1be4136ed4955ecd4ad578e1cdcae10";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=${units}`;
+axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemp);
+
+city.innerHTML = `${cityName}`;
 
 // search city name and temp
 
@@ -127,3 +128,9 @@ function formatDate(date) {
 //let unit = document.querySelector("#temp-units");
 
 //unit.addEventListener("click", changeUnit);
+
+//removed from showCityWeather function
+//let cityName = response.data.name;
+//let cityTemp = Math.round(response.data.main.temp);
+//let searchInput = document.querySelector("#search-text-input");
+//searchInput.value = cityName;
