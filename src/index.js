@@ -1,6 +1,7 @@
 function showTemperature(response) {
   let temperatureElement = document.querySelector("#todays-temp");
   let cityElement = document.querySelector("#city");
+  let dateElement = document.querySelector("#current-date");
   let descriptionElement = document.querySelector("#weather-description");
   let iconElement = document.querySelector("#today-weather-icon");
 
@@ -9,6 +10,7 @@ function showTemperature(response) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -87,67 +89,53 @@ currentLocationButton.addEventListener("click", searchCurrentPosition);
 
 // get current date and time
 
-function formatDate(date) {
-  let now = new Date();
-  let headingDayTime = document.querySelector("#current-date");
-
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-  let months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-
-  let currentDay = days[now.getDay()];
-  let currentDate = date.getDate();
-  let currentMonth = months[now.getMonth()];
-  let currentHour = now.getHours();
-  let currentMin = now.getMinutes();
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let currentHour = date.getHours();
 
   if (currentHour < 10) {
     currentHour = `0${currentHour}`;
   }
 
+  let currentMin = date.getMinutes();
+
   if (currentMin < 10) {
     currentMin = `0${currentMin}`;
   }
 
-  let formattedDateTime = `${currentDay} ${currentDate} ${currentMonth} ${currentHour}:${currentMin}`;
-  headingDayTime.innerHTML = `${formattedDateTime}`;
-
-  return formattedDateTime;
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let currentDay = days[date.getDay()];
+  return `${currentDay} ${currentHour}:${currentMin}`;
 }
 
-// temperature unit change function (from week 4 homework)
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-//function changeUnit(event) {
-//event.preventDefault();
-//let temp = document.querySelector("#todays-temp");
-//if (unit.innerHTML === "°F") {
-//  temp.innerHTML = "66°F";
-//  unit.innerHTML = "°C";
-//} else {
-//  temp.innerHTML = "19°C";
-//  unit.innerHTML = "°F";
-//  }
+  return days[day];
+}
+
+// removed from previous date formatting homework
+//let months = [
+//  "Jan",
+//"Feb",
+//"Mar",
+//"Apr",
+//"May",
+//"Jun",
+//"Jul",
+//"Aug",
+//"Sep",
+//"Oct",
+//"Nov",
+//"Dec",
+//];
+
+//let currentMonth = months[date.getMonth()];
+
+//let formattedDateTime = `${currentDay} ${currentDate} ${currentMonth} ${currentHour}:${currentMin}`;
+//headingDayTime.innerHTML = `${formattedDateTime}`;
+
+//return formattedDateTime;
 //}
-
-//let unit = document.querySelector("#temp-units");
-
-//unit.addEventListener("click", changeUnit);
-
-//removed from showCityWeather function
-//let cityName = response.data.name;
-//let cityTemp = Math.round(response.data.main.temp);
-//let searchInput = document.querySelector("#search-text-input");
-//searchInput.value = cityName;
