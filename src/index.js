@@ -7,6 +7,7 @@ function showCityWeather(response) {
   let searchInput = document.querySelector("#search-text-input");
   searchInput.value = cityName;
   let temperature = document.querySelector("#today-temp");
+  let descriptionElement = document.querySelector("#today-weather-description");
 
   let units = "metric";
   let apiKey = "d1be4136ed4955ecd4ad578e1cdcae10";
@@ -14,6 +15,7 @@ function showCityWeather(response) {
 
   city.innerHTML = `${cityName}`;
   temperature.innerHTML = `${cityTemp}°C`;
+  descriptionElement.innerHTML = response.data.weather[0].description;
 
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemp);
 }
