@@ -25,6 +25,7 @@ h4:first-letter {
 footer {
   text-align: center;
   bottom: 0;
+  padding-top: 10px;
   font-family: "Kalam", cursive;
   color: slategrey;
   font-weight: 500;
@@ -57,7 +58,6 @@ footer {
 .overview-weather {
   text-align: right;
   padding: 20px 60px 10px 0;
-  margin: 0 auto;
 }
 
 #todays-temp {
