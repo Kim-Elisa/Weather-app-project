@@ -18,35 +18,29 @@ function showCityWeather(response) {
   getForecast(response.data.coord);
 }
 
-let units = "metric";
-let apiKey = "d1be4136ed4955ecd4ad578e1cdcae10";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=${units}`;
-axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemp);
+// search city
 
-city.innerHTML = `${cityName}`;
-
-// search city name and temp
-
-function showCitySearch(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#search-text-input");
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = `${searchInput.value}`;
+function search(city) {
   let units = "metric";
   let apiKey = "d1be4136ed4955ecd4ad578e1cdcae10";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&units=${units}`;
-
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=${units}`;
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemp);
+
+  city.innerHTML = `${cityName}`;
+}
+
+// handle city search and submit
+
+function handleCitySearch(event) {
+  event.preventDefault();
+  let citySearchInput = document.querySelector("#search-text-input");
+  search(citySearchInput.value);
 }
 
 let citySearch = document.querySelector("#city-search-form");
 citySearch.addEventListener("submit", showCitySearch);
 
-function showTemp(response) {
-  let temp = Math.round(response.data.main.temp);
-  let tempElement = document.querySelector("#todays-temp");
-  tempElement.innerHTML = `${temp}°C`;
-}
+search("Japan");
 
 // current location button and geolocation API
 
