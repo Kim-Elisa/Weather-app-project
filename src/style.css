@@ -44,14 +44,14 @@ footer {
 }
 
 #current-date {
-  font-size: 22px;
+  font-size: 16px;
   padding-top: 15px;
   padding-bottom: 0;
   line-height: 30px;
 }
 
 #weather-description {
-  font-size: 20px;
+  font-size: 22px;
   padding-top: 0;
   line-height: 20px;
 }
