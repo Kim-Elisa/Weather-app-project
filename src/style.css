@@ -117,10 +117,10 @@ footer {
   margin: -20 auto;
 }
 
-.button-search {
+#search-city-button {
   display: inline-block;
 }
 
-.button-current {
+#current-location-button {
   display: inline-block;
 }
