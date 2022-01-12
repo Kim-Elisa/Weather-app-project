@@ -101,6 +101,12 @@ footer {
 .forecast-date {
   font-size: 18px;
   color: black;
+  opacity: 0.8;
+}
+
+.forecast-temperatures {
+  font-size: 14px;
+  color: black;
 }
 
 .next-day-weather-icon,
