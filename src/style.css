@@ -95,8 +95,12 @@ footer {
 }
 
 .today-weather-icon {
-  color: darkgoldenrod;
   font-size: 76px;
+}
+
+.forecast-date {
+  font-size: 18px;
+  color: black;
 }
 
 .next-day-weather-icon,
