@@ -132,6 +132,44 @@ function formatDay(timestamp) {
   return days[day];
 }
 
+//5 day forecast
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="card mb-3" style="max-width: 95%">
+        <div class="row">
+          <div class="col-md-4">
+           <h4 class="forecast-date" id="tomorrow-date">${day}</h4>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+              <div class="forecast-temperatures"> 
+              <span id="forecast-temperature-max">22°</span>
+              <span id="forecast-temperature-min">16°</span>
+              </div>
+              <img src="http://openweathermap.org/img/wn/50d@2x.png"
+                  alt=""
+                  width="42"
+                   />
+                    </div>
+                  </div>
+                </div>
+              </div>
+     `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 // removed from previous date formatting homework
 //let months = [
 //  "Jan",
