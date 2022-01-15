@@ -43,30 +43,36 @@ function formatDay(timestamp) {
   return days[day];
 }
 
-//5 day forecast
+// show 5 day forecast
 
-function displayForecast() {
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
-
   let forecastHTML = `<div class="row no-gutters align-items-center">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
        <div class="card mb-2" style="max-width: 70%">
        <div class="row">
           <div class="col-md-6">
-           <div class="forecast-date">${day}</div>
+           <div class="forecast-date">${formatDay(forecastDay.dt)}</div>
             </div>
             <div class="col-md-6" id="forecast-detail">
             <div class="card-body">
               <div class="forecast-temperatures"> 
-              <span id="forecast-temperature-max">22°</span>
-              <span id="forecast-temperature-min">16°</span>
+              <span id="forecast-temperature-max">${Math.round(
+                forecastDay.temp.max
+              )}°</span>
+              <span id="forecast-temperature-min">${Math.round(
+                forecastDay.temp.min
+              )}°</span>
               </div>
-              <img src="http://openweathermap.org/img/wn/50d@2x.png"
+              <img src="http://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png"
                   alt=""
                   width="50"
                    />
@@ -75,6 +81,7 @@ function displayForecast() {
           </div>
           </div>
      `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
