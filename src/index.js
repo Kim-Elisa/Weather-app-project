@@ -1,3 +1,12 @@
+//get forecast using coordinates from API
+
+function getForecast(coordinates) {
+  let apiKey = "d1be4136ed4955ecd4ad578e1cdcae10";
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiURL).then(displayForecast);
+}
+
 function showTemperature(response) {
   let temperatureElement = document.querySelector("#todays-temp");
   let cityElement = document.querySelector("#city");
@@ -66,7 +75,6 @@ celsiusLink.addEventListener("click", showCelsiusTemperature);
 // default city
 
 search("Tokyo");
-displayForecast();
 
 // current location button and geolocation API
 
@@ -169,28 +177,6 @@ function displayForecast() {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+
+  getForecast(response.data.coord);
 }
-
-// removed from previous date formatting homework
-//let months = [
-//  "Jan",
-//"Feb",
-//"Mar",
-//"Apr",
-//"May",
-//"Jun",
-//"Jul",
-//"Aug",
-//"Sep",
-//"Oct",
-//"Nov",
-//"Dec",
-//];
-
-//let currentMonth = months[date.getMonth()];
-
-//let formattedDateTime = `${currentDay} ${currentDate} ${currentMonth} ${currentHour}:${currentMin}`;
-//headingDayTime.innerHTML = `${formattedDateTime}`;
-
-//return formattedDateTime;
-//}
