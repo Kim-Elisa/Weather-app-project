@@ -30,15 +30,7 @@ function formatDate(timestamp) {
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   return days[day];
 }
@@ -49,13 +41,13 @@ function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<div class="row no-gutters align-items-center">`;
+  let forecastHTML = `<div class="row no-gutters">`;
   forecast.forEach(function (forecastDay, index) {
     if (index < 5) {
       forecastHTML =
         forecastHTML +
         `
-       <div class="card mb-2" style="max-width: 70%">
+       <div class="card mb-2" style="max-width: 55%">
        <div class="row">
           <div class="col-md-6">
            <div class="forecast-date">${formatDay(forecastDay.dt)}</div>
@@ -65,7 +57,7 @@ function displayForecast(response) {
               <div class="forecast-temperatures"> 
               <span id="forecast-temperature-max">${Math.round(
                 forecastDay.temp.max
-              )}°</span>
+              )}° </span>
               <span id="forecast-temperature-min">${Math.round(
                 forecastDay.temp.min
               )}°</span>
@@ -74,7 +66,7 @@ function displayForecast(response) {
                 forecastDay.weather[0].icon
               }@2x.png"
                   alt=""
-                  width="50"
+                  width="42"
                    />
             </div>
           </div>
@@ -102,6 +94,7 @@ function showTemperature(response) {
   let cityElement = document.querySelector("#city");
   let dateElement = document.querySelector("#current-date");
   let descriptionElement = document.querySelector("#weather-description");
+  let windElement = document.querySelector("#wind");
   let iconElement = document.querySelector("#today-weather-icon");
 
   celsiusTemperature = response.data.main.temp;
@@ -109,6 +102,7 @@ function showTemperature(response) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",

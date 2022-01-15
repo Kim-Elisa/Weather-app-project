@@ -24,11 +24,11 @@ h4:first-letter {
 
 .card {
   display: block;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .full-app {
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   box-shadow: 8px 6px 6px #47555e;
 }
 
@@ -42,10 +42,9 @@ h4:first-letter {
 }
 
 #current-date {
-  font-size: 16px;
+  font-size: 18px;
   color: #303841;
-  padding-top: 25px;
-  padding-bottom: 0;
+  padding-top: 20px;
   line-height: 10px;
 }
 
@@ -53,6 +52,12 @@ h4:first-letter {
   font-size: 20px;
   line-height: 20px;
   color: #47555e;
+}
+
+.wind-speed {
+  font-size: 12px;
+  color: #303841;
+  opacity: 0.5;
 }
 
 .overview-weather {
@@ -67,7 +72,7 @@ h4:first-letter {
 
 .units {
   position: relative;
-  font-size: 18px;
+  font-size: 16px;
   top: -30px;
 }
 
@@ -89,29 +94,30 @@ h4:first-letter {
 }
 
 .forecast-date {
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 0px;
-  font-size: 16px;
+  padding-top: 15px;
+  padding-right: 20px;
+  font-size: 14px;
   color: black;
   opacity: 0.8;
 }
 
 #forecast-detail {
-  padding-left: 30px;
-  padding-bottom: 0px;
-  padding-top: 0px;
+  padding-right: 50px;
 }
 
 .forecast-temperatures {
-  font-size: 16px;
+  font-size: 14px;
   color: black;
   opacity: 0.9;
 }
 
+#forecast-temperature-min {
+  opacity: 0.6;
+}
+
 .container .weather-search {
   padding-bottom: 20px;
-  margin: -20 auto;
+  margin: auto;
 }
 
 #search-city-button {
