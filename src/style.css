@@ -2,16 +2,16 @@ body {
   text-align: center;
   display: block;
   margin: 0 auto;
-  width: 700px;
+  width: 600px;
   border-radius: 10px;
   padding: 20px;
   font-family: "Ubuntu", sans-serif;
 }
 
 h1 {
-  font-size: 56px;
+  font-size: 52px;
   padding-top: 10px;
-  line-height: 20px;
+  line-height: 35px;
   color: #303841;
 }
 
@@ -22,47 +22,46 @@ h4:first-letter {
   text-transform: capitalize;
 }
 
-footer {
-  text-align: center;
-  bottom: 0;
-  padding-top: 10px;
-  font-family: "Kalam", cursive;
-  color: slategrey;
-  font-weight: 500;
-  font-size: 16px;
-}
-
 .card {
   display: block;
   margin: auto;
 }
 
+.full-app {
+  padding-bottom: 10px;
+  box-shadow: 8px 6px 6px #47555e;
+}
+
 .overview {
-  padding: 20px 20px;
+  padding: 10px 10px;
   text-align: left;
-  color: #47555e;
+}
+
+.sub-overview {
+  padding: 0px 20px;
 }
 
 #current-date {
   font-size: 16px;
-  padding-top: 15px;
+  color: #303841;
+  padding-top: 25px;
   padding-bottom: 0;
-  line-height: 30px;
+  line-height: 10px;
 }
 
 #weather-description {
-  font-size: 22px;
-  padding-top: 0;
+  font-size: 20px;
   line-height: 20px;
+  color: #47555e;
 }
 
 .overview-weather {
   text-align: right;
-  padding: 20px 60px 10px 0;
+  padding: 20px 50px 0px 0;
 }
 
 #todays-temp {
-  font-size: 58px;
+  font-size: 52px;
   line-height: 1;
 }
 
@@ -72,22 +71,13 @@ footer {
   top: -30px;
 }
 
-#fahrenheit {
-  text-decoration: none;
-  color: black;
-}
-
-#fahrenheit:hover {
-  text-decoration: none;
-  color: black;
-  cursor: default;
-}
-
+#fahrenheit,
 #celsius {
   text-decoration: none;
   color: black;
 }
 
+#fahrenheit:hover,
 #celsius:hover {
   text-decoration: none;
   color: black;
@@ -99,27 +89,24 @@ footer {
 }
 
 .forecast-date {
-  font-size: 18px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  font-size: 16px;
   color: black;
   opacity: 0.8;
 }
 
+#forecast-detail {
+  padding-left: 30px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
 .forecast-temperatures {
-  font-size: 14px;
+  font-size: 16px;
   color: black;
-}
-
-.next-day-weather-icon,
-.day-three-weather-icon,
-.day-six-weather-icon {
-  color: darkgoldenrod;
-  font-size: 48px;
-}
-
-.day-four-weather-icon,
-.day-five-weather-icon {
-  color: lightgray;
-  font-size: 48px;
+  opacity: 0.9;
 }
 
 .container .weather-search {
@@ -133,4 +120,14 @@ footer {
 
 #current-location-button {
   display: inline-block;
+}
+
+.coder-info {
+  text-align: center;
+  bottom: 0;
+  padding-top: 10px;
+  font-family: "Kalam", cursive;
+  color: slategrey;
+  font-weight: 500;
+  font-size: 14px;
 }

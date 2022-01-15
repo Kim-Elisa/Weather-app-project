@@ -66,6 +66,7 @@ celsiusLink.addEventListener("click", showCelsiusTemperature);
 // default city
 
 search("Tokyo");
+displayForecast();
 
 // current location button and geolocation API
 
@@ -137,32 +138,32 @@ function formatDay(timestamp) {
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Thu", "Fri", "Sat", "Sun"];
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
 
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = `<div class="row no-gutters align-items-center">`;
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
       `
-      <div class="card mb-3" style="max-width: 95%">
-        <div class="row">
-          <div class="col-md-4">
-           <h4 class="forecast-date" id="tomorrow-date">${day}</h4>
+       <div class="card mb-2" style="max-width: 70%">
+       <div class="row">
+          <div class="col-md-6">
+           <div class="forecast-date">${day}</div>
             </div>
-            <div class="col-md-8">
-              <div class="card-body">
+            <div class="col-md-6" id="forecast-detail">
+            <div class="card-body">
               <div class="forecast-temperatures"> 
               <span id="forecast-temperature-max">22°</span>
               <span id="forecast-temperature-min">16°</span>
               </div>
               <img src="http://openweathermap.org/img/wn/50d@2x.png"
                   alt=""
-                  width="42"
+                  width="50"
                    />
-                    </div>
-                  </div>
-                </div>
-              </div>
+            </div>
+          </div>
+          </div>
+          </div>
      `;
   });
 
