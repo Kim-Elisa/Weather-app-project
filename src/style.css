@@ -30,6 +30,7 @@ h4:first-letter {
 .full-app {
   padding-bottom: 20px;
   box-shadow: 8px 6px 6px #47555e;
+  background: #a7bcb9;
 }
 
 .overview {
@@ -95,8 +96,8 @@ h4:first-letter {
 
 .forecast-date {
   padding-top: 15px;
-  padding-right: 20px;
-  font-size: 14px;
+  padding-right: 30px;
+  font-size: 16px;
   color: black;
   opacity: 0.8;
 }

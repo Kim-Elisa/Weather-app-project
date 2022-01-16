@@ -41,13 +41,13 @@ function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<div class="row no-gutters">`;
+  let forecastHTML = `<div class="row no-gutters" id="forecast-card">`;
   forecast.forEach(function (forecastDay, index) {
     if (index < 5) {
       forecastHTML =
         forecastHTML +
         `
-       <div class="card mb-2" style="max-width: 55%">
+       <div class="card mb-2" style="max-width: 70%">
        <div class="row">
           <div class="col-md-6">
            <div class="forecast-date">${formatDay(forecastDay.dt)}</div>
@@ -84,9 +84,9 @@ function displayForecast(response) {
 
 function getForecast(coordinates) {
   let apiKey = "d1be4136ed4955ecd4ad578e1cdcae10";
-  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
 
-  axios.get(apiURL).then(displayForecast);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function showTemperature(response) {
