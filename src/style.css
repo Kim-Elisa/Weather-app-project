@@ -3,7 +3,6 @@ body {
   display: block;
   margin: 0 auto;
   width: 600px;
-  border-radius: 10px;
   padding: 20px;
   font-family: "Ubuntu", sans-serif;
 }
@@ -17,20 +16,21 @@ h1 {
 
 h1,
 h2,
-h3,
-h4:first-letter {
+h3:first-letter {
   text-transform: capitalize;
 }
 
 .card {
   display: block;
   margin: 0 auto;
+  border: 20px;
 }
 
 .full-app {
   padding-bottom: 20px;
   box-shadow: 8px 6px 6px #47555e;
   background: #a7bcb9;
+  border-radius: 10px;
 }
 
 .overview {
@@ -47,6 +47,7 @@ h4:first-letter {
   color: #303841;
   padding-top: 20px;
   line-height: 10px;
+  opacity: 0.9;
 }
 
 #weather-description {
@@ -86,7 +87,7 @@ h4:first-letter {
 #fahrenheit:hover,
 #celsius:hover {
   text-decoration: none;
-  color: black;
+  color: #394a51;
   cursor: default;
 }
 
