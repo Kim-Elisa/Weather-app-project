@@ -34,7 +34,7 @@
                 <div class="sub-overview">
                 <h2 id="current-date"></h2>
                 <h3 id="weather-description"></h3>
-                <p class="wind-speed">Wind: <span id="wind"></span> m/s,</p>
+                <p class="wind-speed">Wind: <span id="wind"></span> m/s</p>
                 </div>
               </div>
             </div>
@@ -55,6 +55,14 @@
             <div class="container weather-search">
                   <form id="city-search-form">
                   <div class="row">
+                     <div class="col-2">
+                    <input
+                      type="button"
+                      value="📍"
+                      id="current-location-button"
+                      class="btn btn-warning"
+                    />
+                    </div>
                   <div class="col-8">
                     <input
                       type="search"
@@ -72,14 +80,6 @@
                       id="search-city-button"
                       class="btn btn-primary">Search
                     </button>
-                    </div>
-                    <div class="col-2">
-                    <input
-                      type="button"
-                      value="📍"
-                      id="current-location-button"
-                      class="btn btn-warning"
-                    />
                     </div>
                     </div>
                   </form>

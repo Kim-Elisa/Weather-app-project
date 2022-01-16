@@ -96,14 +96,14 @@ h4:first-letter {
 
 .forecast-date {
   padding-top: 15px;
-  padding-right: 30px;
+  padding-left: 20px;
   font-size: 16px;
   color: black;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 #forecast-detail {
-  padding-right: 50px;
+  padding-right: 30px;
 }
 
 .forecast-temperatures {
@@ -123,10 +123,12 @@ h4:first-letter {
 
 #search-city-button {
   display: inline-block;
+  margin: 0px 0px 0px -15px;
 }
 
 #current-location-button {
   display: inline-block;
+  margin: 0px -40px 0px 0px;
 }
 
 .coder-info {
